@@ -31,4 +31,8 @@ public interface CartRepository extends JpaRepository<CartItem, Integer> {
     @Modifying      // tells Spring it's a modifying query
     @Query("DELETE FROM CartItem c WHERE c.user.userId = :userId AND c.product.productId = :productId")
     int deleteByUserIdAndProductId(@Param("userId") int userId, @Param("productId") int productId);
+
+	void deleteAllByUser_UserId(int userId);
+
+	
 }
