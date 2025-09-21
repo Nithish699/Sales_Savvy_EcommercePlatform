@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nithish.sales.Entity.User;
@@ -56,6 +57,17 @@ public class CartController {
 		Map<String, Object> cartItems = cartService.getCartItems(user.getUserId());
 		return ResponseEntity.ok(cartItems);
 	}
+	
+	@GetMapping("/items/count")
+    public ResponseEntity<Integer> getCartItemCount(@RequestParam String username) {
+        // Fetch user by username to get the userId
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new IllegalArgumentException("User not found with username: " + username));
+
+        // Call the service to get the total cart item count
+        int count = cartService.getCartItemCount(user.getUserId());
+        return ResponseEntity.ok(count);
+    }
 	
 	@PutMapping("/update")
 	public ResponseEntity<Void> updateCartItemQuantity(@RequestBody Map<String, Object> request,HttpServletRequest httpRequest) {

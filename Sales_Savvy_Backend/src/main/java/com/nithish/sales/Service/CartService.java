@@ -136,4 +136,8 @@ public class CartService {
 	        throw new IllegalArgumentException("Cart item not found for userId: " + userId + " and productId: " + productId);
 	    }
 	}
-}
+
+	public int getCartItemCount(int userId) {
+		return cartRepository.countTotalItems(userId);
+	}
+	}

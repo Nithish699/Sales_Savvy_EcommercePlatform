@@ -24,6 +24,7 @@ public class UserController {
 	@PostMapping("/register")
 	public ResponseEntity<?> registerUser(@RequestBody User user) {
 		try {
+			System.out.println("Received user: " + user.toString());
 			User registeredUser = userService.registerUser(user);
 			return ResponseEntity.ok(Map.of("message", "User registered successfully", "user", registeredUser));
 		} catch (RuntimeException e) {
