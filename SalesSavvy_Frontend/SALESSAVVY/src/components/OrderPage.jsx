@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { CategoryNavigation } from './CategoryNavigation';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import './assets/styles.css';
+import '../assets/styles.css';
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState([]);

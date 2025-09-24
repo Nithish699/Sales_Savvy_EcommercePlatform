@@ -1,6 +1,6 @@
 // RegistrationPage.jsx
 import React, { useState } from 'react';
-import './assets/styles.css';
+import '../assets/styles.css';
 import { useNavigate } from 'react';
 
 export default function RegistrationPage() {

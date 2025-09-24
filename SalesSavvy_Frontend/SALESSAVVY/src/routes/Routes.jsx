@@ -1,12 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import LoginPage from "./LoginPage";
-import RegistrationPage from "./RegistrationPage";
-import CustomerHomePage from "./CustomerHomePage";
-import CartPage from "./CartPage";
-import OrderPage from "./OrderPage";
-import AdminLogin from "./AdminLogin"; 
-import AdminDashboard from "./AdminDashboard";
+import LoginPage from "../components/LoginPage";
+import RegistrationPage from "../components/RegistrationPage";
+import CustomerHomePage from "../components/CustomerHomePage";
+import CartPage from "../components/CartPage";
+import OrderPage from "../components/OrderPage";
+import AdminLogin from "../components/AdminLogin";
+import AdminDashboard from "../components/AdminDashboard";
 
 const AppRoutes = () => {
   return (

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './assets/styles.css';
+import '../assets/styles.css';
 
 export function ProductList({ products, onAddToCart }) {
   if (products.length === 0) {
